@@ -23,6 +23,7 @@ def calculate_time(d1, d2, h, v_sand, n, theta1_deg):
 
     x = d1_ft * math.tan(theta1)
     s1 = math.sqrt(d1_ft ** 2 + x ** 2)
+
     s2 = math.sqrt((h_ft - x) ** 2 + d2 ** 2)
 
     v_sand_fts = v_sand * 5280 / 3600
@@ -37,7 +38,7 @@ def print_result(theta1_deg, time):
     """Вывод результата"""
     print(
         f"\nЕсли спасатель начнёт движение под углом theta1, "
-        f"равным {theta1_deg:.0f} градусам, "
+        f"равным {theta1_deg:.0f} градусов, "
         f"он достигнет утопающего через {time:.1f} секунды."
     )
 
