@@ -1,0 +1,78 @@
+цифра:
+t = int(input())
+
+for _ in range(t):
+    n, d = map(int, input().split())
+    s = input()
+
+    ans = ""
+    inserted = False
+
+    for ch in s:
+        if not inserted and int(ch) < d:
+            ans += str(d)
+            inserted = True
+        ans += ch
+
+    if not inserted:
+        ans += str(d)
+
+    print(ans)
+
+Лёша:
+n = int(input())
+a = list(map(int, input().split()))
+
+total = sum(a)
+
+if total != 0:
+    print("YES")
+    print(1)
+    print(1, n)
+else:
+    pref = 0
+    pos = -1
+
+    for i in range(n):
+        pref += a[i]
+        if pref != 0:
+            pos = i + 1
+            break
+
+    if pos == -1:
+        print("NO")
+    else:
+        print("YES")
+        print(2)
+        print(1, pos)
+        print(pos + 1, n)
+
+Хороший ребёнок:
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    max_product = 0
+
+    for i in range(n):
+        product = 1
+
+        for j in range(n):
+            if i == j:
+                product *= (a[j] + 1)
+            else:
+                product *= a[j]
+
+        max_product = max(max_product, product)
+
+    print(max_product)
+
+Арбуз:
+w = int(input())
+
+if w > 2 and w % 2 == 0:
+    print("YES")
+else:
+    print("NO")
